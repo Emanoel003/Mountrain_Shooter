@@ -18,6 +18,11 @@ class Menu:
         menu_option = 0
         pygame.mixer_music.load('./asset/Menu.mp3')
         pygame.mixer_music.play(-1)
+        
+        # Seu nome e RU
+        nome_ru = "Emanoel - RU: 4340183"
+        font = pygame.font.SysFont(name="Lucida Sans Typewriter", size=20)
+        
         while True:
             # DRAW IMAGES
             self.window.blit(source=self.surf, dest=self.rect)
@@ -29,6 +34,12 @@ class Menu:
                     self.menu_text(20, MENU_OPTION[i], C_YELLOW, ((WIN_WIDTH / 2), 200 + 25 * i))
                 else:
                     self.menu_text(20, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH / 2), 200 + 25 * i))
+            
+            # Adicionar nome e RU no canto inferior direito
+            text_surf = font.render(nome_ru, True, C_WHITE).convert_alpha()
+            text_rect = text_surf.get_rect(bottomright=(WIN_WIDTH - 10, self.rect.height - 10))
+            self.window.blit(source=text_surf, dest=text_rect)
+            
             pygame.display.flip()
 
             # Check for all events
