@@ -20,7 +20,7 @@ class Menu:
         pygame.mixer_music.play(-1)
         
         # Seu nome e RU
-        nome_ru = "Emanoel - RU: 4340183"
+        nome_ru = "Emanoel Aquino - RU: 4340183"
         font = pygame.font.SysFont(name="Lucida Sans Typewriter", size=20)
         
         while True:
